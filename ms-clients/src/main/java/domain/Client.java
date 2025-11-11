@@ -29,11 +29,11 @@ public class Client extends Person{
         this.password = password;
     }
 
-    public Boolean getState() {
+    public Boolean getStatus() {
         return status;
     }
 
-    public void setState(Boolean state) {
+    public void setStatus(Boolean state) {
         this.status = state;
     }
 }
