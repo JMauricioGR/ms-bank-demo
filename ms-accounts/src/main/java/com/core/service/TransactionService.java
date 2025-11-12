@@ -4,6 +4,7 @@ import com.core.domain.Account;
 import com.core.domain.Transactions;
 import com.core.dtos.response.TransactionResponseDto;
 import com.core.enums.TransactionsType;
+import com.core.exceptions.AmmountException;
 import com.core.mappers.TransactionsMapper;
 import org.springframework.stereotype.Service;
 import com.core.repository.AccountsRepository;
@@ -29,7 +30,7 @@ public class TransactionService {
 
         BigDecimal newAmount = account.getBalance().add(amount);
         if (newAmount.compareTo(BigDecimal.ZERO) < 0){
-            throw new RuntimeException();
+            throw new AmmountException("Saldo no disponible");
         }
         Transactions transaction = new Transactions();
         transaction.setAccount(account);
