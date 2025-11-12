@@ -44,8 +44,8 @@ public class TransactionService {
         return TransactionsMapper.responseTransactionsToDto(transactionRepo.save(transaction));
     }
 
-    public List<TransactionResponseDto> transactionsByAccountNumberAndDateRange(String accountNumber, LocalDateTime from, LocalDateTime until) {
-        return transactionRepo.findAllByAccount_AccountNumberAndDateBetween(accountNumber, from, until)
+    public List<TransactionResponseDto> transactionsByClientAndDateRange(String client, LocalDateTime from, LocalDateTime until) {
+        return transactionRepo.findAllByAccount_ClientAndDateBetween(client, from, until)
                 .stream()
                 .map(TransactionsMapper::responseTransactionsToDto)
                 .collect(Collectors.toList());

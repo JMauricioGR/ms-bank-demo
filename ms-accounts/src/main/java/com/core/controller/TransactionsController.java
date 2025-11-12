@@ -19,8 +19,8 @@ public class TransactionsController {
     }
 
     @GetMapping("reportes")
-    public List<TransactionResponseDto> getTransactionsByAccountAndDateRange(@RequestParam("numeroCuenta") String accountNumber, @RequestParam("fechaInicio")LocalDateTime from, @RequestParam("fechaFin") LocalDateTime until){
-        return service.transactionsByAccountNumberAndDateRange(accountNumber, from, until);
+    public List<TransactionResponseDto> getTransactionsByClientAndDateRange(@RequestParam("cliente") String accountNumber, @RequestParam("fechaInicio")LocalDateTime from, @RequestParam("fechaFin") LocalDateTime until){
+        return service.transactionsByClientAndDateRange(accountNumber, from, until);
     }
 
     @GetMapping("transactions")
@@ -37,6 +37,5 @@ public class TransactionsController {
     public TransactionResponseDto createTransaction(@RequestBody TransactionRequestDto requestDto){
         return service.createTransaction(requestDto.getAccountNumber(), requestDto.getAmount());
     }
-
 
 }
