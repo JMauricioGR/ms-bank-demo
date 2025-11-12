@@ -1,5 +1,6 @@
 package com.clients.service;
 
+import com.clients.domain.Client;
 import com.clients.dtos.request.ClientRequestDto;
 import com.clients.dtos.response.ClientResponseDto;
 import com.clients.mappers.ClientsMapper;
@@ -39,7 +40,7 @@ public class ClientsService {
 
     public ClientResponseDto getClientById(Long clientId){
         return mapper.clientEntityToResponseDto(
-                repository.findById(clientId).get()
+                repository.findById(clientId).orElse(new Client())
         );
     }
 }
