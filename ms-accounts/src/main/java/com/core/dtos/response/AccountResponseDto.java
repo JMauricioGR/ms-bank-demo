@@ -1,8 +1,9 @@
 package com.core.dtos.response;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 
-public class AccountResponseDto {
+public class AccountResponseDto implements Serializable {
 
     private Long accountId;
     private String accountNumber;

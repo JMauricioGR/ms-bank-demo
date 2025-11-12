@@ -1,6 +1,8 @@
 package com.clients.dtos.response;
 
-public class ClientResponseDto {
+import java.io.Serializable;
+
+public class ClientResponseDto implements Serializable {
     private Long clientId;
     private String name;
     private String address;

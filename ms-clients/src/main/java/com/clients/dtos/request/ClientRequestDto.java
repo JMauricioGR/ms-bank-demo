@@ -1,6 +1,8 @@
 package com.clients.dtos.request;
 
-public class ClientRequestDto {
+import java.io.Serializable;
+
+public class ClientRequestDto implements Serializable {
     private Long clientId;
     private String name;
     private String address;

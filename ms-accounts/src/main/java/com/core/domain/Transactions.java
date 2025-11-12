@@ -24,7 +24,7 @@ public class Transactions {
     private Boolean status;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "accountNumber")
+    @JoinColumn(name = "accountNumber", referencedColumnName = "accountNumber")
     private Account account;
 
     public Long getId() {

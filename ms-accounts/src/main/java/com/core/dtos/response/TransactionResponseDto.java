@@ -1,9 +1,10 @@
 package com.core.dtos.response;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-public class TransactionResponseDto {
+public class TransactionResponseDto implements Serializable {
     private LocalDateTime date;
     private String client;
     private String accountNumber;

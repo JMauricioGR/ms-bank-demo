@@ -15,6 +15,7 @@ public class Account {
 
     private String accountNumber;
 
+    @Enumerated(EnumType.STRING)
     private AccountType accountType;
 
     private BigDecimal balance;

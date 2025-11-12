@@ -36,7 +36,7 @@ public class TransactionService {
         transaction.setDate(LocalDateTime.now());
         transaction.setAmount(amount);
         transaction.setAmount(newAmount);
-        transaction.setTransactionType(amount.signum() >= 0 ? TransactionsType.CREDITO : TransactionsType.DEBITO);
+        transaction.setTransactionType(amount.signum() >= 0 ? TransactionsType.DEPOSITO : TransactionsType.RETIRO);
 
         account.setBalance(newAmount);
         accountRepo.save(account);

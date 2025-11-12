@@ -1,5 +1,6 @@
 package com.core.service;
 
+import com.core.configuration.Publisher;
 import com.core.domain.Account;
 import com.core.dtos.request.AccountRequestDto;
 import com.core.dtos.response.AccountResponseDto;
@@ -15,13 +16,16 @@ public class AccountsService {
 
     private final AccountsRepository repository;
     private final AccountsMapper mapper;
+    private final Publisher publisher;
 
-    public AccountsService(AccountsRepository repository, AccountsMapper mapper) {
+    public AccountsService(AccountsRepository repository, AccountsMapper mapper, Publisher publisher) {
         this.repository = repository;
         this.mapper = mapper;
+        this.publisher = publisher;
     }
 
     public AccountResponseDto createAccount(AccountRequestDto requestDto) {
+        publisher.send(requestDto);
         return mapper.accountEntityToDto(
                 repository.save(mapper.requestDtoToAccount(requestDto))
         );

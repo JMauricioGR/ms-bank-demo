@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/v1/movimientos/")
+@RequestMapping("/api/v1/movimientos/")
 public class TransactionsController {
 
     private final TransactionService service;
